@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+body {
+    background-color: #1b1b1b;
+}
+.container a{
+    transition: all 0.3s ease-in-out;
+}
+.container a img:hover{
+    transform: scale(1.1);
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    color: #808080;
+
+    position: sticky;
+    top: 0;
+    background: black;
+    height: 60px;
+}
+.nav li .logologo {
+    margin-top: -28px;
+}
+.nav li a {
+    text-decoration: none;
+    color: #808080;
+}
+.nav li #svg {
+    margin-top: 5px;
+}
+.nav > li:hover{
+    color: red;
+}
+.nav > li{
+    list-style: none;
+    cursor: pointer;
+    padding: 1%;
+}
+
+.nav > li:nth-child(2){
+    font-weight: 600;
+
+    
+}
+.nav > li:nth-child(3){
+    font-weight: 600;       
+}
+
+.nav > li:nth-child(6){
+    font-size: 20px;
+    color: gray; 
+
+}
+.nav > li:nth-child(6):hover{
+    color: red;
+}
+.search{   
+    width: 70%;
+    position: relative;
+    padding: 1%;
+    
+}
+.search > input{
+    border: 0;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: -15px;
+    padding: 1%;
+    background-color: rgba(128, 128, 128, 0.212);
+    color: white;
+    
+}
+.search > input:focus{
+    outline: none;
+    color: white;
+}
+
+
+.notification i{
+    font-size: 20px;
+    
+    color: gray;
+    margin-top: 5px;
+
+}
+.notification i:hover{
+    color: rgba(0, 17, 255, 0.733);
+}
+
+
+.profile img{
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+/* <!-- --------------------nav End -------------------- --> */
+
+
+.pop-up{
+    z-index: 888;
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.01);
+    width: 380px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+}
+.pop-up.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+}
+.pop-up .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #143b62;
+    color: #e1e1e1;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.pop-up .form h2{
+    text-align: center;
+    color: #143b62;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+.pop-up .form .form-element{
+    margin: 15px 0px;
+}
+.pop-up .form .form-element label{
+    font-size: 14px;
+    color: #143b62;
+}
+.pop-up .form .form-element input[type="text"],
+.pop-up .form .form-element input[type="password"]{
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+.pop-up .form .form-element input[type="checkbox"]{
+    margin-right: 5px;
+}
+.pop-up .form .form-element button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: linear-gradient(to top right, #143b62, #0D59A5);
+    color: #e1e1e1;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 650;
+    letter-spacing: 1.1px;
+}
+.pop-up .form .form-element a{
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    color: #0D59A5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,250px);
+    grid-template-rows: auto;
+    justify-content: center;
+    column-gap: 15px;
+    /* gap: 1%; */
+    /* margin: 2%; */
+
+}
+.container > div{
+    padding: 0;
+    margin: 15px 10px;
+    border-radius: 20px;
+
+}
+.card > iframe{
+    border-radius:25px ;
+}
+.container  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.card_small{
+    grid-row-end: span 26;
+}
+.card_midium{
+    grid-row-end: span 33;
+}
+.card_large{
+    grid-row-end: span 40;
+}
+
+
+@media all and(min-width: 421px) and (max-width: 768px){
+    .container{
+        grid-template-columns: repeat(auto-fill,200px);
+    }
+    .search{
+        display: none;
+    }
+    .nav > li:nth-child(2){
+        font-weight: 500;
+        font-size: 15px;
+        
+    }
+}
+
+@media all and (min-width:50px) and (max-width: 420px){
+    .container{
+        grid-template-columns: repeat(auto-fill,150px);
+    }
+    .container > div{
+        padding: 0;
+        margin: 8px 5px;
+        border-radius: 20px;
+    
+    }
+    .nav{
+        padding: 2%;
+    }
+    .search > input{
+        /* display: none; */
+        padding: 3%;
+    }
+    .nav > li>img{
+        width: 30px;
+        height: 30px;
+        
+    }
+    .nav > li {
+        font-size: 12px;
+        
+    }
+    .nav > li i{
+        display: none;
+        
+    }
+    .nav > li:nth-child(2){
+        display: none;
+        
+    }
+    .nav > li:nth-child(3){
+        display: none;
+        
+    }
+    .card > iframe{
+        border-radius:25px ;
+    }
+
+}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  #myImg:hover {opacity: 0.7;}
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation */
+  .modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+    
+
+
